@@ -1,0 +1,14 @@
+export { default as painting1 } from "assets/images/paintings/1.jpg";
+export { default as painting2 } from "assets/images/paintings/2.jpg";
+export { default as painting3 } from "assets/images/paintings/3.jpg";
+export { default as painting4 } from "assets/images/paintings/4.jpg";
+export { default as painting5 } from "assets/images/paintings/5.jpg";
+export { default as painting6 } from "assets/images/paintings/6.jpg";
+export { default as painting7 } from "assets/images/paintings/7.jpg";
+export { default as painting8 } from "assets/images/paintings/8.jpg";
+export { default as painting9 } from "assets/images/paintings/9.jpg";
+export { default as painting10 } from "assets/images/paintings/10.jpg";
+export { default as painting11 } from "assets/images/paintings/11.jpg";
+export { default as painting12 } from "assets/images/paintings/12.jpg";
+export { default as painting13 } from "assets/images/paintings/13.jpg";
+export { default as painting14 } from "assets/images/paintings/14.jpg";
