@@ -4,6 +4,11 @@ import { sunsetPalette } from "./palette";
 const customPalette = sunsetPalette;
 
 export const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Ubuntu'
+    ]
+  },
   palette: {
     ...customPalette,
     primary: {

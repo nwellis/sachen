@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu'), url(./fonts/Ubuntu-Regular.ttf), format('ttf');
+}
+
 .App {
   height: 100%;
 }
