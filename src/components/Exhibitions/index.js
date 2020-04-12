@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Container, Card, ListItem, List, ListItemText } from "@material-ui/core";
+import { Container, Card, ListItem, List, ListItemText, Typography } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
 
-const Exhibitions = ({exhibitions = []}) => {
+const Exhibitions = ({exhibitions = [], alignment = 'center'}) => {
   const theme = useTheme();
   console.log(exhibitions)
   return (
@@ -13,8 +13,8 @@ const Exhibitions = ({exhibitions = []}) => {
           {exhibitions.map(event => (
             <ListItem key={event.dateDisplay}>
               <ListItemText
-                primary={event.dateDisplay}
-                secondary={event.description}
+                primary={<Typography align={alignment} variant="h5">{event.dateDisplay}</Typography>}
+                secondary={<Typography align={alignment} variant="h6">{event.description}</Typography>}
               />
             </ListItem>
           ))}
