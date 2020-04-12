@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Container, Card, CardMedia } from "@material-ui/core";
+import { Container, Card, CardMedia } from "@material-ui/core";
 import StackGrid from "react-stack-grid";
 import {
   painting1,

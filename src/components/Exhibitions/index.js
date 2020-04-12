@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Container, Card, CardMedia, Typography, ListItem, List, ListItemText } from "@material-ui/core";
+import { Container, Card, ListItem, List, ListItemText } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
 
 const Exhibitions = ({exhibitions = []}) => {

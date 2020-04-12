@@ -19,7 +19,7 @@ import {
 } from "assets/images/paintings";
 import { useTheme } from "@material-ui/styles";
 
-const Gallery = (imageUrls = []) => {
+const Gallery = () => {
   const theme = useTheme();
   return (
     <Container style={{ padding: `${theme.spacing(4)}px` }}>
