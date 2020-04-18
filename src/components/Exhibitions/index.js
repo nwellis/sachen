@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Container, Card, ListItem, List, ListItemText, Typography } from "@material-ui/core";
+import { Container, ListItem, List, ListItemText, Typography } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
+import { Card } from "../Common";
 
 const Exhibitions = ({exhibitions = [], alignment = 'center'}) => {
   const theme = useTheme();
-  console.log(exhibitions)
   return (
     <Container style={{ padding: `${theme.spacing(4)}px` }}>
       <Card>
