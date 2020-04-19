@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container, ListItem, List, ListItemText, Typography } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
-import { Card } from "../Common";
+import { ExhibitionCard } from "./styles";
 
 const Exhibitions = ({exhibitions = [], alignment = 'center'}) => {
   const theme = useTheme();
   return (
-    <Container style={{ padding: `${theme.spacing(4)}px` }}>
-      <Card>
+    <Container style={{ padding: `${theme.spacing(4)}px`, display: 'flex', justifyContent: 'center' }}>
+      <ExhibitionCard>
         <List>
           {exhibitions.map(event => (
             <ListItem key={event.dateDisplay}>
@@ -19,7 +19,7 @@ const Exhibitions = ({exhibitions = [], alignment = 'center'}) => {
             </ListItem>
           ))}
         </List>
-      </Card>
+      </ExhibitionCard>
     </Container>
   );
 };
