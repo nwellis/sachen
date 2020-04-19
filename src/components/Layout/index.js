@@ -12,6 +12,7 @@ import aboutData from "data/about.json";
 import exhibitionsData from "data/exhibitions.json";
 import StaggeredGallery from "../StaggeredGallery";
 import Exhibitions from "../Exhibitions";
+import { RockTypography } from "../Common";
 
 const Content = () => {
   const [tab, setTab] = useState(TabKeys.Gallery);
@@ -37,7 +38,10 @@ const Content = () => {
 const Layout = () => {
   return (
     <LayoutGrid>
-      <AboutSection />
+      <AboutSection>
+        <RockTypography variant="h3">Stephanie Alicia Chen</RockTypography>
+        <RockTypography variant="h6">- artist & designer -</RockTypography>
+      </AboutSection>
       <Content />
     </LayoutGrid>
   );

@@ -11,7 +11,8 @@ export const theme = createMuiTheme({
     },
     secondary: {
       main: customPalette.secondary
-    }
+    },
+    white: '#FFFFFF'
   },
   typography: {
     fontFamily: [
