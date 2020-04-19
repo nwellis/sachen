@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Container, Card, CardMedia } from "@material-ui/core";
+import { Container, CardMedia } from "@material-ui/core";
 import StackGrid from "react-stack-grid";
 import {
   painting1,
@@ -19,6 +19,7 @@ import {
   painting14
 } from "assets/images/paintings";
 import { useTheme } from "@material-ui/styles";
+import { Card } from "../Common";
 
 const paintingsInOrder = [
   painting1,
