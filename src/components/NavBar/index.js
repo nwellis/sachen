@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AppBar, Tabs, Tab } from "@material-ui/core";
+import { AppBar, Tabs, Tab, Typography } from "@material-ui/core";
 
 export const TabKeys = {
   Gallery: 0,
@@ -20,7 +20,7 @@ const NavBar = ({ selected = TabKeys.Gallery, onTabSelect = () => {} }) => {
         indicatorColor="secondary"
       >
         {Object.keys(TabKeys).map(key => (
-          <Tab key={key} label={key} />
+          <Tab key={key} label={<Typography variant="h6">{key}</Typography>} />
         ))}
       </Tabs>
     </AppBar>
