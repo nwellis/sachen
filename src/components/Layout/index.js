@@ -39,8 +39,8 @@ const Layout = () => {
   return (
     <LayoutGrid>
       <AboutSection>
-        <RockTypography variant="h3">Stephanie Alicia Chen</RockTypography>
-        <RockTypography variant="h6">- artist & designer -</RockTypography>
+        <RockTypography style={{ textShadow: '4px 4px #7D7D7D' }} variant="h3" align="center" gutterBottom>Stephanie Alicia Chen</RockTypography>
+        <RockTypography style={{ textShadow: '2px 2px #7D7D7D' }} variant="h4" align="center">- artist & designer -</RockTypography>
       </AboutSection>
       <Content />
     </LayoutGrid>
