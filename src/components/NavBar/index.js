@@ -12,7 +12,7 @@ const NavBar = ({ selected = TabKeys.Gallery, onTabSelect = () => {} }) => {
   const handleTabUpdate = (_, index) => onTabSelect(index);
 
   return (
-    <AppBar position="relative" color="transparent">
+    <AppBar position="relative" color="white">
       <Tabs
         value={selected}
         onChange={handleTabUpdate}
