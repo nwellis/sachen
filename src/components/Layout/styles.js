@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { grey } from "@material-ui/core/colors";
-import concentration from "assets/images/cropped-concentration.jpg";
+import background from "assets/images/background.jpg";
+import { theme } from "../../theme";
 
 export const LayoutGrid = styled.div`
   display: grid;
@@ -18,8 +19,12 @@ export const LayoutGrid = styled.div`
 
 export const AboutSection = styled.div`
   grid-area: about;
-  background-image: url(${concentration});
-  padding-top: ${({ theme }) => theme.spacing(64)}px;
+  color: ${theme.palette.white};
+  padding: ${({ theme }) => theme.spacing(6, 14, 4, 10)};
+  background-image: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 `;
 
 export const HeaderSection = styled.div`
