@@ -1,25 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Container,
-  ListItem,
-  List,
-  ListItemText,
-  Typography,
-} from "@material-ui/core";
+import { ListItem, List, ListItemText, Typography } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
-import { ExhibitionCard } from "./styles";
+import { ExhibitionCard, MainContainer } from "./styles";
+import Gallery from "./Gallery";
 
 const Exhibitions = ({ exhibitions = [], alignment = "center" }) => {
   const theme = useTheme();
   return (
-    <Container
-      style={{
-        padding: `${theme.spacing(4)}px`,
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <MainContainer>
       <ExhibitionCard>
         <List>
           {exhibitions.map((event, i) => (
@@ -43,7 +32,8 @@ const Exhibitions = ({ exhibitions = [], alignment = "center" }) => {
           ))}
         </List>
       </ExhibitionCard>
-    </Container>
+      <Gallery />
+    </MainContainer>
   );
 };
 
