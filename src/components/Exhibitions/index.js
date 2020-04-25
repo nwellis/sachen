@@ -1,39 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ListItem, List, ListItemText, Typography } from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
-import { ExhibitionCard, MainContainer } from "./styles";
-import Gallery from "./Gallery";
+import {
+  ExhibitionsGrid,
+  EventsSection,
+  CoverSection,
+  GallerySection,
+} from "./styles";
+import Events from "./Events";
 
 const Exhibitions = ({ exhibitions = [], alignment = "center" }) => {
-  const theme = useTheme();
   return (
-    <MainContainer>
-      <ExhibitionCard>
-        <List>
-          {exhibitions.map((event, i) => (
-            <ListItem
-              key={event.dateDisplay}
-              divider={i < exhibitions.length - 1}
-            >
-              <ListItemText
-                primary={
-                  <Typography align={alignment} variant="h5">
-                    {event.dateDisplay}
-                  </Typography>
-                }
-                secondary={
-                  <Typography align={alignment} variant="h6">
-                    {event.description}
-                  </Typography>
-                }
-              />
-            </ListItem>
-          ))}
-        </List>
-      </ExhibitionCard>
-      <Gallery />
-    </MainContainer>
+    <ExhibitionsGrid>
+      <EventsSection>
+        <Events exhibitions={exhibitions} alignment={alignment} />
+      </EventsSection>
+      <CoverSection></CoverSection>
+      <GallerySection></GallerySection>
+    </ExhibitionsGrid>
   );
 };
 
