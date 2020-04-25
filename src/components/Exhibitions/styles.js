@@ -35,7 +35,7 @@ export const CoverSection = styled.div`
   grid-area: cover;
   padding: ${({ theme }) => theme.spacing(2)}px;
   display: flex;
-  justify-content: end;
+  justify-content: start;
 `;
 
 export const GallerySection = styled.div`
