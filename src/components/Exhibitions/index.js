@@ -39,19 +39,18 @@ const images = [
 const Exhibitions = ({ exhibitions = [], alignment = "center" }) => {
   const theme = useTheme();
 
-  const imageCards = images.map(({ src, title }) => (
+  const allItems = images.map(({ src, title }) => (
     <Card>
       <CardMedia title={title} component="img" src={src} />
     </Card>
   ));
 
-  const allItems = [
-    <Events exhibitions={exhibitions} alignment={alignment} />,
-  ].concat(imageCards);
+  const events = <Events exhibitions={exhibitions} alignment={alignment} />;
+  allItems.splice(0, 0, events);
 
   return (
     <Container style={{ padding: `${theme.spacing(4)}px` }}>
-      <StackGrid columnWidth={450} gutterWidth={12} monitorImagesLoaded={true}>
+      <StackGrid columnWidth={568} gutterWidth={12} monitorImagesLoaded={true}>
         {allItems}
       </StackGrid>
     </Container>

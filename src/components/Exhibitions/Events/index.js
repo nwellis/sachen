@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ListItem, List, ListItemText, Typography } from "@material-ui/core";
-import FitContentCard from "../../Common/FitContentCard";
+import { Card } from "../../Common";
 
 const Events = ({ exhibitions = [], alignment = "center" }) => {
   return (
-    <FitContentCard>
+    <Card>
       <List>
         {exhibitions.map((event, i) => (
           <ListItem
@@ -27,7 +27,7 @@ const Events = ({ exhibitions = [], alignment = "center" }) => {
           </ListItem>
         ))}
       </List>
-    </FitContentCard>
+    </Card>
   );
 };
 
