@@ -1,17 +1,6 @@
 import styled from "styled-components";
 
-// export const MainContainer = styled(Container)`
-//   padding: ${({ theme }) => theme.spacing(4)}px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `;
-
-// export const ExhibitionCard = styled(Card)`
-//   width: fit-content;
-//   height: max-content;
-// `;
-
+// Unused, might be useful later on
 export const ExhibitionsGrid = styled.div`
   display: grid;
   flex: 1;

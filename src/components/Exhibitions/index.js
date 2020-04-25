@@ -1,13 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  ExhibitionsGrid,
-  EventsSection,
-  CoverSection,
-  GallerySection,
-} from "./styles";
 import Events from "./Events";
-import { CardMedia, Container, useTheme, Grid } from "@material-ui/core";
+import { CardMedia, Container, useTheme } from "@material-ui/core";
 
 import {
   Board,
@@ -16,60 +10,50 @@ import {
   Exhibit1,
   Exhibit2,
 } from "assets/images/exhibitions";
-import { FitContentCard } from "../Common";
+import { Card } from "../Common";
+import StackGrid from "react-stack-grid";
+
+const images = [
+  {
+    src: Board,
+    title: "Women's conference promotion art",
+  },
+  {
+    src: HoldingArt,
+    title: "Conference attendees holding art",
+  },
+  {
+    src: Presentation,
+    title: "Conference presentation art",
+  },
+  {
+    src: Exhibit1,
+    title: "Art on display, part 1",
+  },
+  {
+    src: Exhibit2,
+    title: "Art on display, part 2",
+  },
+];
 
 const Exhibitions = ({ exhibitions = [], alignment = "center" }) => {
   const theme = useTheme();
 
-  const leftColumnComponents = [
+  const imageCards = images.map(({ src, title }) => (
+    <Card>
+      <CardMedia title={title} component="img" src={src} />
+    </Card>
+  ));
+
+  const allItems = [
     <Events exhibitions={exhibitions} alignment={alignment} />,
-    <FitContentCard>
-      <CardMedia
-        title="Conference Attendees holding art"
-        component="img"
-        src={HoldingArt}
-      />
-    </FitContentCard>,
-  ];
-
-  const rightColumnComponents = [
-    <FitContentCard>
-      <CardMedia title="Painting 1" component="img" src={Board} />
-    </FitContentCard>,
-    <FitContentCard>
-      <CardMedia title="Painting 1" component="img" src={Presentation} />
-    </FitContentCard>,
-  ];
-
-  const zippedComponents = leftColumnComponents
-    .map((leftComponent, i) => {
-      const rightComponent = rightColumnComponents[i];
-      return [leftComponent, rightComponent];
-    })
-    .reduce((zipped, paired) => zipped.concat(paired), []);
+  ].concat(imageCards);
 
   return (
     <Container style={{ padding: `${theme.spacing(4)}px` }}>
-      <Grid container spacing={3}>
-        {zippedComponents.map((component, i) => {
-          const align = i % 2 === 0 ? "flex-end" : "flex-start";
-          return (
-            <Grid item container xs={12} md={6} justify={align}>
-              {component}
-            </Grid>
-          );
-        })}
-      </Grid>
-      <Grid item container xs={12} justify="center">
-        <FitContentCard>
-          <CardMedia title="Exhibit 1" component="img" src={Exhibit1} />
-        </FitContentCard>
-      </Grid>
-      <Grid item container xs={12} justify="center">
-        <FitContentCard>
-          <CardMedia title="Exhibit 2" component="img" src={Exhibit2} />
-        </FitContentCard>
-      </Grid>
+      <StackGrid columnWidth={450} gutterWidth={12} monitorImagesLoaded={true}>
+        {allItems}
+      </StackGrid>
     </Container>
   );
 };
