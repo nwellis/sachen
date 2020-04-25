@@ -16,7 +16,7 @@ import {
   painting11,
   painting12,
   painting13,
-  painting14
+  painting14,
 } from "assets/images/paintings";
 import { useTheme } from "@material-ui/styles";
 import { Card } from "../Common";
@@ -35,14 +35,14 @@ const paintingsInOrder = [
   painting11,
   painting12,
   painting13,
-  painting14
+  painting14,
 ];
 
 const StaggeredGallery = () => {
   const theme = useTheme();
   return (
     <Container style={{ padding: `${theme.spacing(4)}px` }}>
-      <StackGrid columnWidth={380}>
+      <StackGrid columnWidth={380} monitorImagesLoaded={true}>
         {paintingsInOrder.map((painting, index) => (
           <Card>
             <CardMedia
@@ -58,7 +58,7 @@ const StaggeredGallery = () => {
 };
 
 StaggeredGallery.propTypes = {
-  imageUrls: PropTypes.arrayOf(PropTypes.string)
+  imageUrls: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default StaggeredGallery;
