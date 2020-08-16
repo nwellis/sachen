@@ -15,12 +15,12 @@ const Events = ({ exhibitions = [], alignment = "center" }) => {
             <ListItemText
               primary={
                 <Typography align={alignment} variant="h5">
-                  {event.dateDisplay}
+                  {event.description}
                 </Typography>
               }
               secondary={
                 <Typography align={alignment} variant="h6">
-                  {event.description}
+                  {event.dateDisplay}
                 </Typography>
               }
             />
