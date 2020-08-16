@@ -1,48 +1,58 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Events from "./Events";
+import { CardMedia, Container, useTheme } from "@material-ui/core";
+
 import {
-  Container,
-  ListItem,
-  List,
-  ListItemText,
-  Typography,
-} from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
-import { ExhibitionCard } from "./styles";
+  Board,
+  HoldingArt,
+  Presentation,
+  Exhibit1,
+  Exhibit2,
+} from "assets/images/exhibitions";
+import { Card } from "../Common";
+import StackGrid from "react-stack-grid";
+
+const images = [
+  {
+    src: Board,
+    title: "Women's conference promotion art",
+  },
+  {
+    src: HoldingArt,
+    title: "Conference attendees holding art",
+  },
+  {
+    src: Presentation,
+    title: "Conference presentation art",
+  },
+  {
+    src: Exhibit1,
+    title: "Art on display, part 1",
+  },
+  {
+    src: Exhibit2,
+    title: "Art on display, part 2",
+  },
+];
 
 const Exhibitions = ({ exhibitions = [], alignment = "center" }) => {
   const theme = useTheme();
+
+  const allItems = images.map(({ src, title }) => (
+    <Card>
+      <CardMedia title={title} component="img" src={src} />
+    </Card>
+  ));
+
+  const events = <Events exhibitions={exhibitions} alignment={alignment} />;
+  allItems.splice(0, 0, events);
+
   return (
-    <Container
-      style={{
-        padding: `${theme.spacing(4)}px`,
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <ExhibitionCard>
-        <List>
-          {exhibitions.map((event, i) => (
-            <ListItem
-              key={event.dateDisplay}
-              divider={i < exhibitions.length - 1}
-            >
-              <ListItemText
-                primary={
-                  <Typography align={alignment} variant="h5">
-                    {event.dateDisplay}
-                  </Typography>
-                }
-                secondary={
-                  <Typography align={alignment} variant="h6">
-                    {event.description}
-                  </Typography>
-                }
-              />
-            </ListItem>
-          ))}
-        </List>
-      </ExhibitionCard>
+    <Container style={{ padding: `${theme.spacing(4)}px` }}>
+      <StackGrid columnWidth={568} gutterWidth={12} monitorImagesLoaded={true}>
+        {allItems}
+      </StackGrid>
     </Container>
   );
 };
